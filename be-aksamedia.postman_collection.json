@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "e03e56c2-52bc-4f08-80eb-d932ae1e2470",
+		"name": "be-aksamedia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33100095"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOjE3MTA5MjE2MTksImV4cCI6MTcxMDkyNTIxOSwibmJmIjoxNzEwOTIxNjE5LCJqdGkiOiJJZlZ6QWp0aksxQk54YkVtIiwic3ViIjoiNWQwMGQxM2MtZjZlNC00OGIwLThmNzYtZWE2YjJiMDk3Zjc5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.hxMLHJlrv5i1bhFYrY7ix33277PqZKrbAY4xNFk5g0o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin_aksa\",\r\n    \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllDataDivisi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/divisions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"divisions"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "UI/UX%20Designer",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "end",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutEmployees",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/62d6c19b4841a.jpg"
+						},
+						{
+							"key": "name",
+							"value": "Jaya",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "08123123111",
+							"type": "text"
+						},
+						{
+							"key": "divisions_id",
+							"value": "93fd0374-0549-4031-a091-052e50903f26",
+							"type": "text"
+						},
+						{
+							"key": "position",
+							"value": "Leader",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllDataKaryawan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees?division_name=Mobile Apps",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Angga",
+							"disabled": true
+						},
+						{
+							"key": "division_name",
+							"value": "Mobile Apps"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDataKaryawan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/dummy/dummy/31-E-5235-RO-11-16_jpg.rf.aea815002fc74e2e9429d4c113a2279b.jpg"
+						},
+						{
+							"key": "name",
+							"value": "Budi",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "08987987666",
+							"type": "text"
+						},
+						{
+							"key": "division_id",
+							"value": "c16c5d70-e454-4090-a2b1-280ce2f5688b",
+							"type": "text"
+						},
+						{
+							"key": "position",
+							"value": "Internship",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/employees/ea41a9f4-d668-4f20-b5e1-02469de90dbf",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees",
+						"ea41a9f4-d668-4f20-b5e1-02469de90dbf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDataKaryawan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/employees/ea41a9f4-d668-4f20-b5e1-02469de90dbf",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees",
+						"ea41a9f4-d668-4f20-b5e1-02469de90dbf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
