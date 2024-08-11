@@ -67,7 +67,7 @@ class EmployeeController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Data retrieved successfully',
+            'message' => 'Ambil Data Karyawan Sukses.',
             'data' => [
                 'employees' => $formattedEmployees,
             ],
@@ -167,7 +167,7 @@ class EmployeeController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Data karyawan berhasil diperbarui',
+            'message' => 'Perbarui Data Karyawan Sukses.',
         ]);
     }
 
@@ -190,7 +190,7 @@ class EmployeeController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => 'Data karyawan berhasil dihapus',
+            'message' => 'Hapus Data Karyawan Sukses.',
         ]);
     }
 }
